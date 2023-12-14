@@ -1,3 +1,5 @@
+##Airbnb Analysis
+
 The aim of this project is to perform a comprehensive analysis of Airbnb data using MongoDB Atlas. The focus will be on data cleaning, preparation, and the development of interactive geospatial visualizations to gain insights into pricing variations, availability patterns, and location-based trends. The primary objectives include:
 
 Establish MongoDB Connection:
