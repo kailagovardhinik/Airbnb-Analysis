@@ -14,21 +14,21 @@ host_list=[]
 for i in range(len(list)):
     host_list.append(list[i]["host"])
 host=pd.DataFrame(host_list,columns=["host_id","host_name"])    
-final=df1.join(host)
+data=df1.join(host)
 rating_list=[]
 for i in range(len(list)):
     rating_list.append(list[i]["review_scores"])
 rating=pd.DataFrame(rating_list)
-final=df1.join(rating)
-add=[]
+data=df1.join(rating)
+address_list=[]
 for i in range(len(list)):
-    add.append(list[i]["address"])
-address=pd.DataFrame(add)
-final=final.join(address)
-rev=[]
+    address_list.append(list[i]["address"])
+address=pd.DataFrame(address_list)
+data=data.join(address)
+review_list=[]
 for i in range(len(list)):
-    rev.append(list[i]["reviews"])
-review=pd.DataFrame(rev[0])
+    review_list.append(list[i]["reviews"])
+review=pd.DataFrame(review_list[0])
 review=review.drop(["_id","date","listing_id"],axis=1)
-final=final.join(review)
-final.to_csv('G:/Project/04 Airbnb/final.csv',index=False)
+data=data.join(review)
+data.to_csv('G:/Project/04 Airbnb/data.csv',index=False)
